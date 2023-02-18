@@ -7,22 +7,22 @@ GO
 
 USE HotelReservationDB;
 
---CREATE TABLE [dbo].[Customers](
---	[CustomerID] [int] IDENTITY(1,1) NOT NULL,
---	[FirstName] [varchar](50) NOT NULL,
---	[LastName] [varchar](120) NOT NULL,
---	[Email] [varchar](120) NOT NULL,
---	[Cellphone] [varchar](11) NOT NULL,
---	[BirthDate] date NOT NULL,
---	CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED 
---	(
---		[CustomerID] ASC
---	)
---);
---GO
+CREATE TABLE [dbo].[Customers](
+	[CustomerID] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [varchar](50) NOT NULL,
+	[LastName] [varchar](120) NOT NULL,
+	[Email] [varchar](120) NOT NULL,
+	[Cellphone] [varchar](11) NOT NULL,
+	[BirthDate] date NOT NULL,
+	CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED 
+	(
+		[CustomerID] ASC
+	)
+);
+GO
 
--- ALTER TABLE [dbo].[Customers] WITH CHECK ADD CONSTRAINT [CK_CustomerBirthDate] CHECK  (([BirthDate]<getdate()))
--- GO
+ALTER TABLE [dbo].[Customers] WITH CHECK ADD CONSTRAINT [CK_CustomerBirthDate] CHECK  (([BirthDate]<getdate()))
+GO
 
 --CREATE TABLE [dbo].[Reservations](
 --	[ReservationID] [int] IDENTITY(1,1) NOT NULL,
@@ -38,18 +38,18 @@ USE HotelReservationDB;
 --);
 --GO
 
---CREATE TABLE [dbo].[CustomerReservations](
---	[CustomerReservationID] [int] IDENTITY(1,1) NOT NULL,
---	[CustomerID] [int] NOT NULL,
---	[ReservationID] [int] NOT NULL,
---	CONSTRAINT [PK_CustomerReservations] PRIMARY KEY CLUSTERED 
---	(
---		[CustomerReservationID] ASC
---	),
---	CONSTRAINT [FK_CustomerReservations_CustomerID] FOREIGN KEY ([CustomerID]) REFERENCES dbo.Customers(CustomerID),
---	CONSTRAINT [FK_CustomerReservations_ReservationID] FOREIGN KEY ([ReservationID]) REFERENCES dbo.Reservations(ReservationID)
---);
---GO
+CREATE TABLE [dbo].[CustomerReservations](
+	[CustomerReservationID] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerID] [int] NOT NULL,
+	[ReservationID] [int] NOT NULL,
+	CONSTRAINT [PK_CustomerReservations] PRIMARY KEY CLUSTERED 
+	(
+		[CustomerReservationID] ASC
+	),
+	CONSTRAINT [FK_CustomerReservations_CustomerID] FOREIGN KEY ([CustomerID]) REFERENCES dbo.Customers(CustomerID),
+	CONSTRAINT [FK_CustomerReservations_ReservationID] FOREIGN KEY ([ReservationID]) REFERENCES dbo.Reservations(ReservationID)
+);
+GO
 
 CREATE TABLE [dbo].[RoomTypes](
 	[RoomTypeID]		[int] IDENTITY(1,1)		NOT NULL,

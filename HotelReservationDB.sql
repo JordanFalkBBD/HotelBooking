@@ -55,7 +55,7 @@ CREATE TABLE [dbo].[RoomTypes](
 	[RoomTypeID]		[int] IDENTITY(1,1)		NOT NULL,
 	[RoomType]			[varchar](30)			NOT NULL,
 	[RoomDescription]	[varchar](120)			NULL,
-	[RoomCapacity] � �  [int] � � � � � � � � � NOT NULL,
+	[RoomCapacity]		[int]					NOT NULL,
 	CONSTRAINT [PK_RoomTypes] PRIMARY KEY CLUSTERED ([RoomTypeID] ASC)
 );
 GO

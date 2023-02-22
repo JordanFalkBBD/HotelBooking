@@ -55,7 +55,7 @@ CREATE TABLE [dbo].[RoomTypes](
 	[RoomTypeID]		[int] IDENTITY(1,1)		NOT NULL,
 	[RoomType]			[varchar](30)			NOT NULL,
 	[RoomDescription]	[varchar](120)			NULL,
-	[RoomCapacity]      [int]                   NOT NULL,
+	[RoomCapacity] ï¿½ ï¿½  [int] ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ NOT NULL,
 	CONSTRAINT [PK_RoomTypes] PRIMARY KEY CLUSTERED ([RoomTypeID] ASC)
 );
 GO
@@ -106,34 +106,4 @@ CREATE TABLE [dbo].[Payments](
 	CONSTRAINT [FK_Payments_PaymentTypeID] FOREIGN KEY ([PaymentTypeID]) REFERENCES dbo.PaymentTypes(PaymentTypeID),
 	CONSTRAINT [FK_Payments_PaymentMethodID] FOREIGN KEY ([PaymentMethodID]) REFERENCES dbo.PaymentMethods(PaymentMethodID),
 );
-GO
-
-CREATE VIEW [dbo].[ReservationsReport]
-AS
-SELECT 	r.[ReservationID],
-		r.[ReservationDate],
-		r.[TotalPrice],
-		COUNT([Rooms].[RoomID])						AS NumberOfRooms,
-		STRING_AGG([RoomTypes].[RoomType], ', ') 	AS RoomTypes,
-		c.[LastName],
-		c.[FirstName]
-FROM [Reservations] r
-LEFT JOIN [CustomerReservations] cr
-ON r.[ReservationID] = cr.[ReservationID]
-LEFT JOIN [Customers] c
-ON cr.[CustomerID] = c.[CustomerID]
-LEFT JOIN [ReservationRooms] rr
-ON r.[ReservationID] = rr.[ReservationID]
-LEFT JOIN [Rooms]
-ON [Rooms].[RoomID] = rr.[RoomID]
-LEFT JOIN [RoomTypes]
-ON [Rooms].[RoomTypeID] = [RoomTypes].[RoomTypeID]
-WHERE 	r.[ReservationDate] <= '2022-12-31'
-AND 	r.[ReservationDate] >= '2022-01-01'
-GROUP BY 	r.[ReservationID],
-			r.[ReservationDate],
-			r.[TotalPrice],
-			c.[LastName],
-			c.[FirstName]
-
 GO

@@ -1,3 +1,4 @@
+-- View: Returns all the reservation for a certain date range including the Price, NumberOfRooms, and the Customers Full Name
 CREATE VIEW [dbo].[ReservationsReport]
 AS
 SELECT 	r.[ReservationID],

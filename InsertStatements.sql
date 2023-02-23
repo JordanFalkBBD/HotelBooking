@@ -118,6 +118,26 @@ VALUES
 (2, 130, 3),
 (2, 150, 4);
 
+INSERT INTO [dbo].[ReservationRooms] (ReservationID,RoomID)
+VALUES 
+(2, 1),
+(2, 2),
+(3, 3),
+(3, 4),
+(4, 1),
+(4, 2),
+(2, 3),
+(2, 4),
+(3, 1),
+(3, 2),
+(4, 3),
+(4, 4),
+(2, 1),
+(2, 2),
+(3, 3),
+(3, 4),
+(4, 1);
+
 SELECT * FROM Customers;
 SELECT * FROM Reservations;
 SELECT * FROM PaymentMethods;

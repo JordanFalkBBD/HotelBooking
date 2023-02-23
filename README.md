@@ -16,7 +16,7 @@
   - One or many Payment has one and only one PaymentMethod
 
 ## Contributors
-[Karl Haupt](https://github.com/KarlHaupt)
-[Jordan Falk](https://github.com/JordanFalkBBD)
-[Thabani Nkonde](https://github.com/thabaniBBD2712)
-[Kgotlelelo Masenamela](https://github.com/masek002)
+ - [Karl Haupt](https://github.com/KarlHaupt)
+ - [Jordan Falk](https://github.com/JordanFalkBBD)
+ - [Thabani Nkonde](https://github.com/thabaniBBD2712)
+ - [Kgotlelelo Masenamela](https://github.com/masek002)

@@ -1,7 +1,7 @@
 # HotelBooking
 
 ## ERD Diagram
-![ERD For Hotel Booking System (2)](https://user-images.githubusercontent.com/122435537/220911242-bb077161-172f-4317-8d71-6da02d970b35.png)
+![ERD For Hotel Booking System](https://user-images.githubusercontent.com/122435537/221135114-3d4a2436-6b7a-4f4c-93a8-b962ba843bb8.png)
 
 ## Business Rules
   - Zero or many Customers can have 1 or more reservations

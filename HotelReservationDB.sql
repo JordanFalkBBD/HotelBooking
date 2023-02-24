@@ -65,7 +65,6 @@ CREATE TABLE [dbo].[ReservationRooms](
 	[ReservationRoomID]	INT IDENTITY(1,1)		NOT NULL,
 	[ReservationID]		INT 					NOT NULL,
 	[RoomID]			INT						NOT NULL,
-	[NoOfRoom]			INT						NOT NULL,
 	CONSTRAINT [PK_ReservationRoom_ReservationRoomID] PRIMARY KEY CLUSTERED ([ReservationRoomID] ASC),
 	CONSTRAINT [FK_Rooms_RoomID] FOREIGN KEY ([RoomID]) REFERENCES dbo.Rooms(RoomID),
 	CONSTRAINT [FK_Reservation_ReservationID] FOREIGN KEY ([ReservationID]) REFERENCES dbo.Reservations(ReservationID),

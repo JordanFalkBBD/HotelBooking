@@ -8,7 +8,10 @@ CREATE PROCEDURE create_reservation
 @ToDate date,
 @ReservationDate date,
 @DiscountRate int,
-@TotalPrice decimal(18, 2)
+@TotalPrice decimal(18, 2),
+@NoOfGuests int,
+@RoomRate decimal(18, 2),
+@RoomTypeID int
 AS
 	DECLARE @Customer_ID int;
 	DECLARE @Reservation_ID int;
@@ -32,6 +35,9 @@ AS
 
 	INSERT INTO CustomerReservations (CustomerID, ReservationID)
 	VALUES (@Customer_ID,@Reservation_ID);
+
+	INSERT INTO Rooms (RoomTypeID,NoOfGuests,RoomRate)
+	VALUES (@RoomTypeID,@NoOfGuests,@RoomRate);
 GO
 
 EXEC create_reservation 
@@ -44,8 +50,12 @@ EXEC create_reservation
 @ToDate = '2023-02-28',
 @ReservationDate = '2023-02-21',
 @DiscountRate = 50,
-@TotalPrice = 1000;
+@TotalPrice = 1000,
+@NoOfGuests = 1,
+@RoomRate = 1000,
+@RoomTypeID = 1;
 
 SELECT * FROM Customers;
 SELECT * FROM Reservations;
 SELECT * FROM CustomerReservations;
+SELECT * FROM Rooms;

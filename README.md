@@ -1,6 +1,6 @@
 # HotelBooking
 
-## ERD Diagram for hotel booking system
+## ERD Diagram
 ![ERD For Hotel Booking System (2)](https://user-images.githubusercontent.com/122435537/220911242-bb077161-172f-4317-8d71-6da02d970b35.png)
 
 ## Business Rules
